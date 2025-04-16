@@ -32,14 +32,13 @@ for (let i = 1; i <= countQuest; i++) {
   }
 }
 
-if (personalMovieDB.count < 10 && personalMovieDB.count > 0) {
+if (personalMovieDB.count < 10) {
   alert("Very few films watched");
-} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+}
+if (personalMovieDB.count > 30) {
   alert("You are a movie buff");
-} else if (personalMovieDB.count >= 30) {
+} else {
   alert("You are a classic spectator");
-} else if (personalMovieDB.count === null || personalMovieDB.count === 0) {
-  alert("Error");
 }
 
 console.log(personalMovieDB);
