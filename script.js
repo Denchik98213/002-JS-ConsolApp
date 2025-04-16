@@ -11,7 +11,7 @@ const personalMovieDB = {
 const countQuest = 2;
 let i = 1;
 
-while (i <= countQuest) {
+do {
   const lastFilm = prompt("What one of last film did you watch?", "");
   const assessmentLastFilm = +prompt(
     "Give assessment for that film from 0 to 10?",
@@ -34,7 +34,7 @@ while (i <= countQuest) {
   } else {
     console.log("error");
   }
-}
+} while (i <= countQuest);
 
 if (personalMovieDB.count < 10 && personalMovieDB.count > 0) {
   alert("Very few films watched");
