@@ -9,10 +9,11 @@ const personalMovieDB = {
 };
 
 const countQuest = 2;
+let i = 1;
 
-for (let i = 1; i <= countQuest; i++) {
+while (i <= countQuest) {
   const lastFilm = prompt("What one of last film did you watch?", "");
-  const assessmentLastFilm = prompt(
+  const assessmentLastFilm = +prompt(
     "Give assessment for that film from 0 to 10?",
     ""
   );
@@ -22,13 +23,16 @@ for (let i = 1; i <= countQuest; i++) {
     assessmentLastFilm !== null &&
     lastFilm !== "" &&
     assessmentLastFilm !== "" &&
-    lastFilm.length < 50
+    lastFilm.length < 50 &&
+    !isNaN(assessmentLastFilm) &&
+    assessmentLastFilm >= 0 &&
+    assessmentLastFilm <= 10
   ) {
     personalMovieDB.movies[lastFilm] = assessmentLastFilm;
     console.log("done");
+    i++;
   } else {
     console.log("error");
-    i--;
   }
 }
 
